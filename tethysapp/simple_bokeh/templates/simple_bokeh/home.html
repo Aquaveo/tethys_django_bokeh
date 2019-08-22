@@ -1,0 +1,18 @@
+{% extends "simple_bokeh/base.html" %}
+{% load tethys_gizmos %}
+
+{% block import_gizmos %}
+{% import_gizmo_dependency bokeh_view %}
+{% endblock %}
+
+{% block header_buttons %}
+  <div class="header-button glyphicon-button" data-toggle="tooltip" data-placement="bottom" title="Help">
+    <a data-toggle="modal" data-target="#help-modal"><span class="glyphicon glyphicon-question-sign"></span></a>
+  </div>
+{% endblock %}
+
+{% block app_content %}
+  <h1>Tethys Django-Bokeh Example</h1>
+  {{ script|safe }}
+{% endblock %}
+
