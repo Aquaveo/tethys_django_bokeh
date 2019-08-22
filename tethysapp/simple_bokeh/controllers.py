@@ -58,7 +58,7 @@ class Shape(param.Parameterized):
 
     def __init__(self, **params):
         super(Shape, self).__init__(**params)
-        self.figure = figure(x_range=(-1, 1), y_range=(-1, 1), height=500)
+        self.figure = figure(x_range=(-1, 1), y_range=(-1, 1), width=500, height=500)
         self.renderer = self.figure.line(*self._get_coords())
 
     def _get_coords(self):
