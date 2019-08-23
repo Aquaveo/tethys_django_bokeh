@@ -10,7 +10,6 @@ from bokeh.models import ColumnDataSource, Slider
 from bokeh.document import Document
 from bokeh.themes import Theme
 from bokeh.embed import server_document
-from bokeh.resources import settings as bokeh_settings
 
 from bokeh.sampledata.sea_surface_temperature import sea_surface_temperature
 
@@ -45,12 +44,7 @@ def home_handler(doc: Document) -> None:
 
 def home(request: HttpRequest) -> HttpResponse:
     script = server_document(request.build_absolute_uri())
-
-    context = {
-        'script': script,
-        'files': {'js_files': bokeh_settings.js_files(), 'css_files': bokeh_settings.css_files()}
-    }
-    return render(request, 'simple_bokeh/home.html', context)
+    return render(request, 'simple_bokeh/home.html', dict(script=script))
 
 
 class Shape(param.Parameterized):
