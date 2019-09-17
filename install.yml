@@ -9,10 +9,9 @@ requirements:
   conda:
     channels:
       - conda-forge
+      - bokeh/label/dev
     packages:
-      # bokeh with django channels integration is required
-      # a bokeh dev release can be installed manually from https://github.com/bokeh/bokeh
-      #- bokeh=1.3.5dev2
+      - bokeh>=1.3.5*
       - param
       - panel
 
